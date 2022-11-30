@@ -9,12 +9,18 @@ from rolepermissions.decorators import has_role_decorator, has_permission_decora
 
 @has_role_decorator('administrativo')
 def home_admin(request):
-    
-     return HttpResponse('Pagina administrativo')
+    if user == true:
+        return render (request, 'home_admin.html')
+    else:
+        return HttpResponse('error')
  
+ 
+@has_role_decorator('comercial')
 def home_comercial(request):
-    
-    return HttpResponse('Pagina Comercial')
+    if True:
+        return render(request, 'home_comercial.html')
+    else:
+        return HttpResponse('error')
  
  
 def criar_usuario(request):
