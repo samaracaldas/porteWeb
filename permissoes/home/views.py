@@ -1,4 +1,6 @@
 from django.http import HttpResponse
+from django.http import Http404
+from django.template import loader
 from django.shortcuts import render
 from django.contrib.auth.models import User 
 from rolepermissions.roles import assign_role, get_user_roles
@@ -9,18 +11,13 @@ from rolepermissions.decorators import has_role_decorator, has_permission_decora
 
 @has_role_decorator('administrativo')
 def home_admin(request):
-    if user == true:
-        return render (request, 'home_admin.html')
-    else:
-        return HttpResponse('error')
+        return render(request, 'home_administrativo.html')
+    
+
  
- 
-@has_role_decorator('comercial')
+@has_role_decorator('comercial') 
 def home_comercial(request):
-    if True:
-        return render(request, 'home_comercial.html')
-    else:
-        return HttpResponse('error')
+    return render(request, 'home_comercial.html')
  
  
 def criar_usuario(request):
